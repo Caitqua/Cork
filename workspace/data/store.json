@@ -1,0 +1,162 @@
+{
+  "cases": [
+    {
+      "id": "case_1143b293",
+      "name": "First Case",
+      "archived": false,
+      "created_at": "2025-08-31T09:51:47.813465Z",
+      "updated_at": "2025-08-31T09:51:47.813476Z",
+      "client_info": {},
+      "objectives": [
+        "Test",
+        "Test 2",
+        "Test 3"
+      ],
+      "case_type": "Civil",
+      "summary": "",
+      "evidence": [
+        {
+          "id": "evid_212265bc",
+          "type": "Person",
+          "title": "Larry",
+          "date": null,
+          "location": null,
+          "collector": null,
+          "notes": "",
+          "tags": [],
+          "details": {},
+          "links": []
+        }
+      ],
+      "documents": [],
+      "notes": [
+        {
+          "id": "note_8e9c7e7e",
+          "title": "Case Journal #1",
+          "body": "Here's case journal #1. I don't know what I'm doing.",
+          "created_at": "2025-08-31T11:33:02.129023Z",
+          "updated_at": "2025-08-31T11:33:02.129052Z",
+          "tags": []
+        }
+      ],
+      "board_nodes": [],
+      "board_links": []
+    },
+    {
+      "id": "case_c010d502",
+      "name": "The Case of the Flying Fox",
+      "archived": true,
+      "created_at": "2025-08-31T12:59:37.773676Z",
+      "updated_at": "2025-08-31T12:59:37.773720Z",
+      "client_info": {},
+      "objectives": [],
+      "case_type": "Court",
+      "summary": "",
+      "evidence": [
+        {
+          "id": "evid_f90df21f",
+          "type": "note",
+          "title": "Note",
+          "date": null,
+          "location": null,
+          "collector": null,
+          "notes": "This is an example evidence item.",
+          "tags": [],
+          "details": {
+            "id": ""
+          },
+          "links": []
+        }
+      ],
+      "documents": [],
+      "notes": [],
+      "board_nodes": [
+        {
+          "id": "node_7bfd3843",
+          "title": "[note] Note",
+          "description": "This is an example evidence item.",
+          "icon": "📌",
+          "image_path": null,
+          "evidence_id": "evid_f90df21f",
+          "details": {},
+          "thread": null,
+          "x": 802,
+          "y": 310
+        },
+        {
+          "id": "node_7de069ce",
+          "title": "Sticky Note",
+          "description": "",
+          "icon": "📝",
+          "image_path": null,
+          "evidence_id": null,
+          "details": {
+            "sticky": "1"
+          },
+          "thread": null,
+          "x": 1312,
+          "y": 457
+        },
+        {
+          "id": "node_5a1ac794",
+          "title": "Sticky Note",
+          "description": "",
+          "icon": "📝",
+          "image_path": null,
+          "evidence_id": null,
+          "details": {
+            "sticky": "1"
+          },
+          "thread": null,
+          "x": 1132,
+          "y": 597
+        },
+        {
+          "id": "node_05186498",
+          "title": "Sticky Note",
+          "description": "",
+          "icon": "📝",
+          "image_path": null,
+          "evidence_id": null,
+          "details": {
+            "sticky": "1"
+          },
+          "thread": null,
+          "x": 1312,
+          "y": 597
+        },
+        {
+          "id": "node_eab420f9",
+          "title": "Sticky Note",
+          "description": "",
+          "icon": "📝",
+          "image_path": null,
+          "evidence_id": null,
+          "details": {
+            "sticky": "1"
+          },
+          "thread": null,
+          "x": 1492,
+          "y": 597
+        },
+        {
+          "id": "node_06e2ee6c",
+          "title": "Sticky Note",
+          "description": "",
+          "icon": "📝",
+          "image_path": null,
+          "evidence_id": null,
+          "details": {
+            "sticky": "1"
+          },
+          "thread": null,
+          "x": 1132,
+          "y": 737
+        }
+      ],
+      "board_links": []
+    }
+  ],
+  "last_saved_at": "2025-08-31T14:22:07.727939Z",
+  "dark_mode": false
+}

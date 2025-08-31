@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PYTHONPATH="$(pwd)"
+python3 -m src.ui.app "$@"
+
