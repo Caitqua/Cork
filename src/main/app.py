@@ -16,10 +16,7 @@ class App(tk.Tk):
 		tk.Tk.__init__(self)
 		# Adds a title to the window:
 		self.wm_title("Test Application")
-		self._build_toolbar()
-		self._build_tabs()
-		self._build_menubar()
-		self._update_title()
+		
 		# This creates a frame and assigns it to a container
 		container = tk.Frame(self, height=400, width=400)
 		# Specifying the region where the frame is packed in root
@@ -40,7 +37,7 @@ class App(tk.Tk):
 			self.frames[F] = frame
 			frame.grid(row = 0, column = 0, sticky = "nsew")
 		# Using a method to switch frames:
-		self.show_frame(MainPage)
+		self.show_frame(Dashboard)
 	def show_frame(self, cont):
 		frame = self.frames[cont]
 		# Raises the current frame to the top:
@@ -78,7 +75,7 @@ class CompletionScreen(tk.Frame):
 		btn_page_switch = ttk.Button(
 			self,
 			text = "Return to menu",
-			command = lambda: controller.show_frame(MainPage)
+			command = lambda: controller.show_frame(Dashboard)
 		)
 		btn_page_switch.pack(side="bottom", fill=tk.X)
 
