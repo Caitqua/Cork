@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cmd="${1:-app}"
+
+case "$cmd" in 
+	app)
+	# Run the Tkinter app
+	python3 -m src.main.app
+	;;
+*)
+	echo "Usage: scripts/dev [app]" >&2
+	exit 1
+	;;
+esac
