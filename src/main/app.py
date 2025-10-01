@@ -8,7 +8,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 
 # Imports from the project.
-
+from src.ui.dashboard import Dashboard
 
 class App(tk.Tk):
     # This is the method that initializes the class, creating a method that runs itself when the class forms an object.
@@ -163,18 +163,19 @@ class App(tk.Tk):
         #TODO: Stub
     def add_connection(self):
         print('Creating a connection between two nodes...')
-class Dashboard(ttk.Frame):
-    def __init__(self, parent, controller):
-        ttk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Main Page")
-        label.pack(padx=10, pady=10)
-
-        btn_page_switch = tk.Button(
-            self,
-            text="Go to the Side Page",
-            command=lambda: controller.show_frame(SidePage),
-        )
-        btn_page_switch.pack(side="bottom", fill=tk.X)
+# DEPRECATED, Keeping for backup testing purposes!
+# class Dashboard(ttk.Frame):
+#     def __init__(self, parent, controller):
+#         ttk.Frame.__init__(self, parent)
+#         label = tk.Label(self, text="Main Page")
+#         label.pack(padx=10, pady=10)
+# 
+#         btn_page_switch = tk.Button(
+#             self,
+#             text="Go to the Side Page",
+#             command=lambda: controller.show_frame(SidePage),
+#         )
+#         btn_page_switch.pack(side="bottom", fill=tk.X)
 
 ## Placeholder until I get something better to do.
 class SidePage(tk.Frame):
