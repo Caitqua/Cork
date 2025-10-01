@@ -176,7 +176,7 @@ class Dashboard(ttk.Frame):
         )
         btn_page_switch.pack(side="bottom", fill=tk.X)
 
-
+## Placeholder until I get something better to do.
 class SidePage(tk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
