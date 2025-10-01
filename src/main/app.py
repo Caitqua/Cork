@@ -8,7 +8,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 
 # Imports from the project.
-from src.ui.dashboard import Dashboard
+
 
 class App(tk.Tk):
     # This is the method that initializes the class, creating a method that runs itself when the class forms an object.
@@ -36,45 +36,71 @@ class App(tk.Tk):
             # The windows class acts as the root window for the frames.
             self.frames[frame_cls] = frame
             frame.grid(row=0, column=0, sticky="nsew")
-	
+
         self.build_menubar()
         # Using a method to switch frames:
         self.show_frame(Dashboard)
-	
+
 
     def build_menubar(self):
         menubar = tk.Menu(self)
         # File
         file_menu = tk.Menu(menubar, tearoff=0)
-        file_menu.add_command(label="Open Case...", command=self.open_case)
-        file_menu.add_command(label="Save Case...",command=self.save_case)
-        file_menu.add_command(label="New Case...",command=self.new_case)
-        file_menu.add_command(label="Close Case...",command=self.close_case)
-        file_menu.add_separator()
         file_menu.add_command(label="Create New Workspace...",command=self.create_workspace)
         file_menu.add_command(label="Open Workspace...",command=self.open_workspace)
-        file_menu.add_separator()
-        file_menu.add_command(label="Solve Case...",command=self.solve_case)
-        file_menu.add_command(label="Archive Case...",command=self.archive_case)
+
         file_menu.add_separator()
         file_menu.add_command(label="Preferences...",command=self.open_preferences)
-	# menu_file.add_command(label="Open Recent Dashboard:",command=self.open_recent_dashboard) TODO: Stub
+        # file_menu.add_command(label="Open Recent Dashboard:",command=self.open_recent_dashboard) TODO: Stub
         # Edit
         edit_menu = tk.Menu(menubar, tearoff=0)
+
+            # List Items
         edit_menu.add_command(label="Undo", command=self.undo)
         edit_menu.add_command(label="Redo",command=self.redo)
         edit_menu.add_separator()
         edit_menu.add_command(label="Add Todo...",command=self.add_todo)
         edit_menu.add_command(label="Add Evidence...", command=self.add_evidence)
+
         # View
         view_menu = tk.Menu(menubar, tearoff=0)
-        view_menu.add_command(label="View Archived Cases...",command=self.view_archived)
-        view_menu.add_command(label="View News RSS Feeds...",command=self.view_news)
 
+            # List Items
+        view_menu.add_command(label="View Archived Cases...",command=self.view_archived)
+
+         # Case View
+        casefile_menu = tk.Menu(menubar,tearoff=0)
+
+            # List Items
+        casefile_menu.add_command(label="Open Case...", command=self.open_case)
+        casefile_menu.add_command(label="Save Case...",command=self.save_case)
+        casefile_menu.add_command(label="New Case...",command=self.new_case)
+        casefile_menu.add_separator()
+        casefile_menu.add_command(label="Solve Case...",command=self.solve_case)
+        casefile_menu.add_command(label="Archive Case...",command=self.archive_case)
+
+        # Corkboard
+        cork_menu = tk.Menu(menubar,tearoff=0)
+        cork_create_menu = tk.Menu(cork_menu,tearoff=0)
+            # List Items
+        cork_create_menu.add_command(label='Node',command=self.add_node)
+        cork_create_menu.add_command(label='Connection',command=self.add_connection)
+        cork_menu.add_cascade(label='Create New...', menu=cork_create_menu)
+
+        # Media
+        media_menu = tk.Menu(menubar,tearoff=0)
+
+            # News List Items
+        media_menu.add_command(label="View News RSS Feeds...",command=self.view_news)
+            # Social Media List Items
+        media_menu.add_command(label="View Social Media Feeds", command=self.view_socials)
         # Actually building the menu here:
         menubar.add_cascade(label="File", menu=file_menu)
         menubar.add_cascade(label="Edit",menu=edit_menu)
         menubar.add_cascade(label="View",menu=view_menu)
+        menubar.add_cascade(label="Case File", menu=casefile_menu)
+        menubar.add_cascade(label="Corkboard", menu=cork_menu)
+        menubar.add_cascade(label="Media", menu=media_menu)
 
         self.config(menu=menubar)
     def show_frame(self, cont):
@@ -128,9 +154,16 @@ class App(tk.Tk):
         #TODO: Stub
     def add_evidence(self):
         print('Adding an evidence item...')
-	#TODO: Stub
-
-class Dashboard(tk.Frame):
+        #TODO: Stub
+    def view_socials(self):
+        print('Viewing social media feeds...')
+        #TODO: Stub
+    def add_node(self):
+        print('Creating a corkboard node...')
+        #TODO: Stub
+    def add_connection(self):
+        print('Creating a connection between two nodes...')
+class Dashboard(ttk.Frame):
     def __init__(self, parent, controller):
         ttk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Main Page")
@@ -175,7 +208,7 @@ def main():
     root = App()
     icon = Image.open("./src/icons/cork.png")
     photo = ImageTk.PhotoImage(icon)
-    root.wm_iconphoto(False, photo)
+    # root.wm_iconphoto(False, photo)
 
     root.mainloop()
 
