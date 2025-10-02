@@ -30,7 +30,7 @@ class App(tk.Tk):
         self.frames = {}
 
         # This loop should add components to the dictionary:
-        for frame_cls in (Dashboard, SidePage, CompletionScreen):
+        for frame_cls in (Dashboard,SidePage):
             frame = frame_cls(container, self)
 
             # The windows class acts as the root window for the frames.
@@ -46,15 +46,17 @@ class App(tk.Tk):
         menubar = tk.Menu(self)
         # File
         file_menu = tk.Menu(menubar, tearoff=0)
+            #List Items
         file_menu.add_command(label="Create New Workspace...",command=self.create_workspace)
         file_menu.add_command(label="Open Workspace...",command=self.open_workspace)
 
-        file_menu.add_separator()
+        file_menu.add_separator() # Separator
+
         file_menu.add_command(label="Preferences...",command=self.open_preferences)
         # file_menu.add_command(label="Open Recent Dashboard:",command=self.open_recent_dashboard) TODO: Stub
+
         # Edit
         edit_menu = tk.Menu(menubar, tearoff=0)
-
             # List Items
         edit_menu.add_command(label="Undo", command=self.undo)
         edit_menu.add_command(label="Redo",command=self.redo)
@@ -64,13 +66,11 @@ class App(tk.Tk):
 
         # View
         view_menu = tk.Menu(menubar, tearoff=0)
-
             # List Items
         view_menu.add_command(label="View Archived Cases...",command=self.view_archived)
 
          # Case View
         casefile_menu = tk.Menu(menubar,tearoff=0)
-
             # List Items
         casefile_menu.add_command(label="Open Case...", command=self.open_case)
         casefile_menu.add_command(label="Save Case...",command=self.save_case)
@@ -94,6 +94,7 @@ class App(tk.Tk):
         media_menu.add_command(label="View News RSS Feeds...",command=self.view_news)
             # Social Media List Items
         media_menu.add_command(label="View Social Media Feeds", command=self.view_socials)
+
         # Actually building the menu here:
         menubar.add_cascade(label="File", menu=file_menu)
         menubar.add_cascade(label="Edit",menu=edit_menu)
@@ -109,13 +110,13 @@ class App(tk.Tk):
         frame.tkraise()
     def new_case(self):
         print('Making a new case...')
-	#TODO: Stub
+    	#TODO: Stub
     def save_case(self):
         print('Saving a case...')
-	#TODO: Stub
+	    #TODO: Stub
     def open_case(self):
         print('Opening a case...')
-	#TODO: Stub
+	    #TODO: Stub
     def close_case(self):
         print('Closing a case...')
         #TODO: Stub
@@ -163,47 +164,15 @@ class App(tk.Tk):
         #TODO: Stub
     def add_connection(self):
         print('Creating a connection between two nodes...')
-# DEPRECATED, Keeping for backup testing purposes!
-# class Dashboard(ttk.Frame):
-#     def __init__(self, parent, controller):
-#         ttk.Frame.__init__(self, parent)
-#         label = tk.Label(self, text="Main Page")
-#         label.pack(padx=10, pady=10)
-# 
-#         btn_page_switch = tk.Button(
-#             self,
-#             text="Go to the Side Page",
-#             command=lambda: controller.show_frame(SidePage),
-#         )
-#         btn_page_switch.pack(side="bottom", fill=tk.X)
 
-## Placeholder until I get something better to do.
-class SidePage(tk.Frame):
+class SidePage(ttk.Frame):
     def __init__(self, parent, controller):
-        ttk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="This is the Side Page")
-        label.pack(padx=10, pady=10)
+        # Stub frame; populate with real widgets when the side page UI is defined.
+        super().__init__(parent)
+        self.controller = controller
 
-        btn_page_switch = tk.Button(
-            self,
-            text="Go to the Completion Screen",
-            command=lambda: controller.show_frame(CompletionScreen),
-        )
-        btn_page_switch.pack(side="bottom", fill=tk.X)
-
-
-class CompletionScreen(tk.Frame):
-    def __init__(self, parent, controller):
-        ttk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Completion screen, we did it!")
-        label.pack(padx=10, pady=10)
-        btn_page_switch = ttk.Button(
-            self,
-            text="Return to menu",
-            command=lambda: controller.show_frame(Dashboard),
-        )
-        btn_page_switch.pack(side="bottom", fill=tk.X)
-
+        placeholder = ttk.Label(self, text="SidePage stub")
+        placeholder.grid(row=0, column=0, padx=16, pady=16)
 
 def main():
     root = App()
