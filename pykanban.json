@@ -1,0 +1,24 @@
+{
+    "1": {
+        "Title": "Implement kanban board",
+        "Description": "Implement the scaffolding of a kanban board in the repo.",
+        "Tag": "KB_BOARD",
+        "Status": "Archived",
+        "Begin_Time": "",
+        "Complete_Time": "",
+        "Duration": 0,
+        "Creation_Date": "",
+        "Due_Date": "2025-10-09 23:59:59"
+    },
+    "2": {
+        "Title": "Add case objects",
+        "Description": "Core functionality should include the ability to save/load the case, and add/change the name. Cases should display oin the case viewer tree view on the left side of the dashboard.",
+        "Status": "Doing",
+        "Tag": "CASE1",
+        "Creation_Date": "2025-10-03 03:28:18",
+        "Due_Date": "2025-10-04 23:59:59",
+        "Begin_Time": "2025-10-03 03:28:53",
+        "Complete_Time": "",
+        "Duration": 0
+    }
+}
